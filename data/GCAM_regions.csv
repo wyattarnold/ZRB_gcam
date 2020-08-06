@@ -1,0 +1,55 @@
+ISO,Country,Continent,RegionCode,Region,DemandChange
+BDI,Burundi,Africa,2,Africa_Eastern,1.045
+COM,Comoros,Africa,2,Africa_Eastern,1.045
+DJI,Djibouti,Africa,2,Africa_Eastern,1.045
+ERI,Eritrea,Africa,2,Africa_Eastern,1.045
+ETH,Ethiopia,Africa,2,Africa_Eastern,1.045
+KEN,Kenya,Africa,2,Africa_Eastern,1.045
+MDG,Madagascar,Africa,2,Africa_Eastern,1.045
+MUS,Mauritius,Africa,2,Africa_Eastern,1.045
+REU,Reunion,Africa,2,Africa_Eastern,1.045
+RWA,Rwanda,Africa,2,Africa_Eastern,1.045
+SDN,Sudan,Africa,2,Africa_Eastern,1.045
+SOM,Somalia,Africa,2,Africa_Eastern,1.045
+UGA,Uganda,Africa,2,Africa_Eastern,1.045
+DZA,Algeria,Africa,3,Africa_Northern,1.019
+EGY,Egypt,Africa,3,Africa_Northern,1.019
+ESH,Western Sahara,Africa,3,Africa_Northern,1.019
+LBY,Libyan Arab Jamahiriya,Africa,3,Africa_Northern,1.019
+MAR,Morocco,Africa,3,Africa_Northern,1.019
+TUN,Tunisia,Africa,3,Africa_Northern,1.019
+AGO,Angola,Africa,4,Africa_Southern,2.087
+BWA,Botswana,Africa,4,Africa_Southern,2.087
+LSO,Lesotho,Africa,4,Africa_Southern,2.087
+MOZ,Mozambique,Africa,4,Africa_Southern,2.087
+MWI,Malawi,Africa,4,Africa_Southern,2.087
+NAM,Namibia,Africa,4,Africa_Southern,2.087
+SWZ,Swaziland,Africa,4,Africa_Southern,2.087
+TZA,"Tanzania, United Republic of",Africa,4,Africa_Southern,2.087
+ZMB,Zambia,Africa,4,Africa_Southern,2.087
+ZWE,Zimbabwe,Africa,4,Africa_Southern,2.087
+BEN,Benin,Africa,5,Africa_Western,1.919
+BFA,Burkina Faso,Africa,5,Africa_Western,1.919
+CAF,Central African Republic,Africa,5,Africa_Western,1.919
+CIV,Cote dIvoire,Africa,5,Africa_Western,1.919
+CMR,Cameroon,Africa,5,Africa_Western,1.919
+COD,"Congo, the Democratic Republic of the",Africa,5,Africa_Western,1.919
+COG,Congo,Africa,5,Africa_Western,1.919
+CPV,Cape Verde,Africa,5,Africa_Western,1.919
+GAB,Gabon,Africa,5,Africa_Western,1.919
+GHA,Ghana,Africa,5,Africa_Western,1.919
+GIN,Guinea,Africa,5,Africa_Western,1.919
+GMB,Gambia,Africa,5,Africa_Western,1.919
+GNB,Guinea-Bissau,Africa,5,Africa_Western,1.919
+GNQ,Equatorial Guinea,Africa,5,Africa_Western,1.919
+LBR,Liberia,Africa,5,Africa_Western,1.919
+MLI,Mali,Africa,5,Africa_Western,1.919
+MRT,Mauritania,Africa,5,Africa_Western,1.919
+NER,Niger,Africa,5,Africa_Western,1.919
+NGA,Nigeria,Africa,5,Africa_Western,1.919
+SEN,Senegal,Africa,5,Africa_Western,1.919
+SLE,Sierra Leone,Africa,5,Africa_Western,1.919
+STP,Sao Tome and Principe,Africa,5,Africa_Western,1.919
+TCD,Chad,Africa,5,Africa_Western,1.919
+TGO,Togo,Africa,5,Africa_Western,1.919
+ZAF,South Africa,Africa,24,South Africa,0.833
