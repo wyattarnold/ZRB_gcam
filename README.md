@@ -2,7 +2,8 @@
 
 This repository contains the code and results used to generate Figures 2-3-4 of the following paper:
 ```
-Giuliani, M., J. Lamontagne, M.I. Hejazi, P.M. Reed, and A. Castelletti, Avoiding the unintended consequences of climate change mitigation for African river basins (submitted)
+Giuliani, M., J. Lamontagne, M.I. Hejazi, P.M. Reed, and A. Castelletti, Avoiding the unintended 
+consequences of climate change mitigation for African river basins (submitted)
 ```
 
 plot_figure2.m in the figures folder computes the Empirical Cumulative Distribution Functions of the uncertain attainment of the local ZRB objectives estimated via simulation of the modeled historical ZRB operations over the ensemble of interdependent climate and socio-economic scenarios. In the data folder, the Jsim.txt file contains the objectives values (each row is one scenario, the columns correspond to -hydropower production, irrigation deficit, environmental deficit); the idRCP.txt file provides the mapping of the scenarios to the RCP projections.
