@@ -16,7 +16,7 @@ Arguments:
 
 Based on work from the following paper:
 Herman, J.D., P.M. Reed, and T. Wagener (2013), Time-varying sensitivity analysis clarifies the effects of watershed model formulation on model behavior, Water Resour. Res., 49, doi:10.1002/wrcr.20124.
-([Link to Paper](http://onlinelibrary.wiley.com/doi/10.1002/wrcr.20124/abstract))
+([Link to Paper](http://onlinelibrary.wiley.com/doi/10.1002/wrcr.20124/abstract) | [Link to original repository](http://mxgiuliani00.github.io/hbv/))
 
 Copyright (C) 2010-2017 Matteo Giuliani, Josh Kollat, Jon Herman, and others.
 
