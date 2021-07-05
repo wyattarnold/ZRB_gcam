@@ -22,6 +22,7 @@ C/C++ Version of HBV: Lumped model, one catchment. Uses Hamon ET and MOPEX forci
 #include "hbv_model.h"
 #include "moeaframework.h"
 #include "utils.h"
+#include "time.h"
 #include <math.h>
 #include <vector>
 
@@ -29,26 +30,35 @@ using namespace std;
 
 void evaluate(double* Qobs, double* Qsim, int nDays, double* objs){
 
-    //convert observations and simulations from array to vector
-    vector<double> Vobs(nDays, -99);
-    vector<double> Vsim(nDays, -99);
-    for(int i=0; i<Vobs.size(); i++){
-        Vobs[i] = Qobs[i];
-        Vsim[i] = Qsim[i];
+    //convert observations and simulations from array to vector (one year of warmup)
+    vector<double> Vobs, Vsim, Verr2, Vprod, Verr ;
+    for(int i=2000; i<nDays; i++){
+        Vobs.push_back( Qobs[i] );
+        Vsim.push_back( Qsim[i] );
+        Verr.push_back( abs(Qobs[i] - Qsim[i]) );
+        Verr2.push_back( pow((Qobs[i] - Qsim[i]), 2) );
+        Vprod.push_back( Qobs[i]*Qsim[i] );
     }
 
+    // NSE vs Pearson correlation
+    double NSE = 1 - ( utils::computeMean( Verr2 ) / utils::computeVariance( Vobs ) ) ;
+    double PearCoeff = (utils::computeMean( Vprod ) - utils::computeMean(Vobs) * utils::computeMean(Vsim)) /
+    sqrt( utils::computeVariance(Vobs) * utils::computeVariance(Vsim) );
+    objs[0] = NSE;
+    objs[1] = PearCoeff;
+    
     // calibration using NSE decomposition from Gupta et al., 2009 
     // (see http://www.meteo.mcgill.ca/~huardda/articles/gupta09.pdf):
     // obj 1) minimize relative variability (alpha)
     // obj 2) minimize absolute value of relative bias (beta)
     // obj 3) maximize correlation coefficient (r)
-    double alpha = utils::computeStDev(Vsim) / utils::computeStDev(Vobs);
-    double beta = fabs( utils::computeMean(Vsim) - utils::computeMean(Vobs) ) / utils::computeStDev(Vobs);
-    double r = utils::computeCorr(Vsim, Vobs);
+    //double alpha = utils::computeStDev(Vsim) / utils::computeStDev(Vobs);
+    //double beta = fabs( utils::computeMean(Vsim) - utils::computeMean(Vobs) ) / utils::computeStDev(Vobs);
+    //double r = utils::computeCorr(Vsim, Vobs);
     // 3-objective calibration
-    objs[0] = alpha;
-    objs[1] = beta;
-    objs[2] = -r;
+    //objs[0] = alpha;
+    //objs[1] = beta;
+    //objs[2] = -r;
 }
 
 
@@ -66,10 +76,14 @@ int main(int argc, char **argv)
     hbv_model myHBV(input_file);
 
     // calibration settings
-    int nobjs = 3;
+    int nobjs = 2;
     int nvars = 12;
     double objs[nobjs];
     double vars[nvars];
+
+    clock_t start, end;
+    start = clock();
+
 
     MOEA_Init(nobjs, 0);
     while (MOEA_Next_solution() == MOEA_SUCCESS) {
@@ -90,6 +104,10 @@ int main(int argc, char **argv)
 
     // clear HBV
     myHBV.hbv_delete(myHBV.getData().nDays);
+
+    end = clock();
+    cout << "time elapsed: " << ((end - start)/double(CLOCKS_PER_SEC)) << " seconds" << endl;
+
 
     return 0;
 }

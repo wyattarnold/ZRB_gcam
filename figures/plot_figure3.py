@@ -36,7 +36,6 @@ ax2.scatter(world[fTax], SA[fTax], c='#ECB120', marker='o', s=2)
 ax2.scatter(world[uTax], SA[uTax], c='#2A6246', marker='o', s=2)
 ax2.plot(x1,x1, '--k', linewidth=1.0)
 ax2.set_xlabel('Global irrigation demand increase (%)')
-#ax2.set_ylabel('Southern Africa irrigation demand increase (%)')
 
 plt.savefig('./scatter.svg')
 plt.show()
